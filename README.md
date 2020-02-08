@@ -1,13 +1,13 @@
 # cs493-s3-sdk
 
-##Installation
+## Installation
 clone the repo onto your local machine
 ```
 git clone https://github.com/moehnked/cs493-s3-sdk.git
 ```
 
 the program is located within the file
-###musicap.py
+### musicap.py
 
 the program can be executed by etering the command
 ```
