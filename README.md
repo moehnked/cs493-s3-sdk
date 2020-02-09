@@ -5,6 +5,10 @@ clone the repo onto your local machine
 ```
 git clone https://github.com/moehnked/cs493-s3-sdk.git
 ```
+install the necessary modules
+```
+pip install boto3
+```
 
 the program is located within the file
 ### musicap.py
