@@ -57,7 +57,11 @@ def uploadArtist(dirPath, colName=""):
             uploadAlbum(fi, colName + '/' + f)
         #find any songs and upload them as songs to /[artist]
         else :
-            uploadSong(fi, colName)
+            fpart = splitall(fi)
+            f = fpart[len(fpart) - 1]
+            f = f.replace('/', '')
+            print "uploading song " + f + " under artist: " + colName
+            uploadSong(fi, colName + '/' + f)
 
 def uploadSong(songpath, colName=""):
     print "uploading song to " + colName + "..."
@@ -75,7 +79,7 @@ def uploadSong(songpath, colName=""):
             else:
                 response = s3_client.upload_file(songpath, s3_bucket, fi[len(fi)-1])
         else:
-            response = s3_client.upload_file(songpath, s3_bucket, colName + '/' + fi[len(fi) - 1])
+            response = s3_client.upload_file(songpath, s3_bucket, colName)
             
     except ClientError as e:
         logging.error(e)
