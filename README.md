@@ -20,3 +20,5 @@ and providing the necessary arguments in the following order
 [type of upload] - can be 'album', 'artist' or 'song'
 [folder path] - the folder you would like to place the upload within
 ```
+
+the dev branch contains CLI examples and sample files
