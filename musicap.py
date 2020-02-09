@@ -75,7 +75,7 @@ def uploadSong(songpath, colName=""):
             else:
                 response = s3_client.upload_file(songpath, s3_bucket, fi[len(fi)-1])
         else:
-            response = s3_client.upload_file(songpath, s3_bucket, colName + '/' + fi[len(fi) - 1])
+            response = s3_client.upload_file(songpath, s3_bucket, colName)
             
     except ClientError as e:
         logging.error(e)
@@ -86,7 +86,7 @@ def uploadSong(songpath, colName=""):
 #
 
 #check arguments
-#        argv  0    1           2                   3                               4
+#        argv  0    1                   2                    3                                  4
 #use: python s3.py <profile> <filepath to upload> <collection type: artist; album; song> <collection name>
 
 if len(sys.argv) < 4:
@@ -97,6 +97,7 @@ if len(sys.argv) < 4:
 #set up s3 objects
 filepath = sys.argv[2]
 col_name = ""
+song_name = ""
 
 if len(sys.argv) == 5:
     col_name = sys.argv[4]
